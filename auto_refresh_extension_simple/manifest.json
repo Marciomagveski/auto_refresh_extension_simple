@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Refresh",
+  "version": "1.0",
+  "description": "Atualiza automaticamente a aba atual em intervalo definido.",
+  "permissions": ["tabs", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["autorefresh.js"]
+    }
+  ]
+}
